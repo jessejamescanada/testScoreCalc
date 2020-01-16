@@ -19,35 +19,34 @@ function grades() {
   let s = totalScore.value;
 
   let total = ((g / s) * 100).toFixed(2);
-  result.innerHTML = `
-    <h1 class="text-win">You have taken ${scores.length + 1} tests</h1>`
+ 
 
 
-  //   if (total == 100){
-  //   result.innerHTML = `
-  //   <h1 class="text-win">You scored ${total}%!</h1>
-  //   <i class="fas fa-grin-stars fa-5x"></i>`
-  // }else if(total >= 90 && total <= 99) {
-  //   result.innerHTML = `
-  //   <h1 class="text-win">You scored ${total}% for an A!</h1>
-  //   <i class="far fa-laugh-beam fa-5x"></i>`;
-  // } else if (total >= 80 && total <= 89) {
-  //   result.innerHTML = `
-  //   <h1 class="text-win">You scored ${total}% For a B</h1>
-  //   <i class="far fa-smile-beam fa-5x"></i>`;
-  // } else if (total >= 70 && total <= 79) {
-  //   result.innerHTML = `
-  //   <h1 class="text-win">You scored ${total}% for a C</h1>
-  //   <i class="far fa-smile fa-5x"></i>`;
-  // } else if (total >= 60 && total <= 69) {
-  //   result.innerHTML = `
-  //   <h1 class="text-win">You scored ${total}% for a D</h1>
-  //   <i class="far fa-grimace fa-5x"></i>`;
-  // } else {
-  //   result.innerHTML = `
-  //   <h1 class="text-win">You scored a ${total}% and failed</h1>
-  //   <i class="fas fa-thumbs-down fa-5x"></i>`;
-  // }
+    if (total == 100){
+    result.innerHTML = `
+    <h1 class="text-win">You scored ${total}%!</h1>
+    <i class="fas fa-grin-stars fa-5x"></i>`
+  }else if(total >= 90 && total <= 99) {
+    result.innerHTML = `
+    <h1 class="text-win">You scored ${total}% for an A!</h1>
+    <i class="far fa-laugh-beam fa-5x"></i>`;
+  } else if (total >= 80 && total <= 89) {
+    result.innerHTML = `
+    <h1 class="text-win">You scored ${total}% For a B</h1>
+    <i class="far fa-smile-beam fa-5x"></i>`;
+  } else if (total >= 70 && total <= 79) {
+    result.innerHTML = `
+    <h1 class="text-win">You scored ${total}% for a C</h1>
+    <i class="far fa-smile fa-5x"></i>`;
+  } else if (total >= 60 && total <= 69) {
+    result.innerHTML = `
+    <h1 class="text-win">You scored ${total}% for a D</h1>
+    <i class="far fa-grimace fa-5x"></i>`;
+  } else {
+    result.innerHTML = `
+    <h1 class="text-win">You scored a ${total}% and failed</h1>
+    <i class="fas fa-thumbs-down fa-5x"></i>`;
+  }
   scores.push(total);
   // getAverage();
   // modal.style.display = "block";
@@ -137,6 +136,8 @@ BTNcalc.addEventListener("click", success);
 window.addEventListener("click", clearModal);
 
 BTNreset.addEventListener("click", clearInput);
+
+BTNaverage.addEventListener('click', success);
 
 // li.addEventListener('click', removeItem)
 
