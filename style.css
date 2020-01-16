@@ -152,10 +152,6 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-column-gap: 10px;
   width: 11rem;
   margin: .5rem;
-  border: 1px solid rgba(0,0,0,0.1);
-  border-left: none;
-  border-right: none;
-  border-top: none;
 }
 
 /* move 'x' and change color on hover */
