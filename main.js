@@ -19,31 +19,28 @@ function grades() {
   let s = totalScore.value;
 
   let total = ((g / s) * 100).toFixed(2);
- 
-
-
     if (total == 100){
-    result.innerHTML = `
+    test.innerHTML = `
     <h1 class="text-win">You scored ${total}%!</h1>
     <i class="fas fa-grin-stars fa-5x"></i>`
   }else if(total >= 90 && total <= 99) {
-    result.innerHTML = `
+    test.innerHTML = `
     <h1 class="text-win">You scored ${total}% for an A!</h1>
     <i class="far fa-laugh-beam fa-5x"></i>`;
   } else if (total >= 80 && total <= 89) {
-    result.innerHTML = `
+    test.innerHTML = `
     <h1 class="text-win">You scored ${total}% For a B</h1>
     <i class="far fa-smile-beam fa-5x"></i>`;
   } else if (total >= 70 && total <= 79) {
-    result.innerHTML = `
+    test.innerHTML = `
     <h1 class="text-win">You scored ${total}% for a C</h1>
     <i class="far fa-smile fa-5x"></i>`;
   } else if (total >= 60 && total <= 69) {
-    result.innerHTML = `
+    test.innerHTML = `
     <h1 class="text-win">You scored ${total}% for a D</h1>
     <i class="far fa-grimace fa-5x"></i>`;
   } else {
-    result.innerHTML = `
+    test.innerHTML = `
     <h1 class="text-win">You scored a ${total}% and failed</h1>
     <i class="fas fa-thumbs-down fa-5x"></i>`;
   }
@@ -67,22 +64,22 @@ function getAverage() {
   // test.innerHTML = `<h1>${scores.reduce(reducer)}</h1>`
   // test.innerHTML = `<h1>Average is ${avg}</h1>`
   if(avg == 100){
-    test.innerHTML = `<h1 class="test"> Wow! Your average is ${avg}%!</h1>
+    result.innerHTML = `<h1 class="test"> Wow! Your average is ${avg}%!</h1>
     <i class="fas fa-grin-stars fa-5x"></i>`;
   }else if(avg >= 90 && avg <= 99) {
-    test.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
+    result.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
     <i class="far fa-laugh-beam fa-5x"></i>`;
   } else if (avg >= 80 && avg <= 89) {
-    test.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
+    result.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
     <i class="far fa-smile-beam fa-5x"></i>`;
   } else if (avg >= 70 && avg <= 79) {
-    test.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
+    result.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
     <i class="far fa-smile fa-5x"></i>`;
   } else if (avg >= 60 && avg <= 69) {
-    test.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
+    result.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
     <i class="far fa-grimace fa-5x"></i>`;
   } else {
-    test.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
+    result.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
     <i class="fas fa-thumbs-down fa-5x"></i>`;
   }
 }
@@ -136,8 +133,6 @@ BTNcalc.addEventListener("click", success);
 window.addEventListener("click", clearModal);
 
 BTNreset.addEventListener("click", clearInput);
-
-BTNaverage.addEventListener('click', success);
 
 // li.addEventListener('click', removeItem)
 
