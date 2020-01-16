@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #fafafa, #f3f3f3);
+}
+
+
+.container {
+  background-image: linear-gradient(to bottom, rgb(196, 233, 255), rgb(255, 227, 183));
+  padding-top: 1rem;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: auto; */
+  margin: auto;
+  margin-top: 4rem;
+  box-shadow: 7px 10px 25px -17px rgba(0,0,0,1);
+  border: none;
+  border-radius: 3px;
+  padding-bottom: 2rem;
+}
+
+.title {
+  font-size: 3rem;
+  color: rgb(216, 154, 40);
+  margin-bottom: 2rem;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.inputContainer,
+#scoreInput {
+  margin-bottom: 2.5rem;
+}
+
+#scoreInput,
+#scoreTotal {
+  border-radius: 5px;
+  border: none;
+  padding: 0.3rem;
+}
+
+
+/* button styling */
+.buttons {
+  /* display: flex;
+  flex-direction: row; */
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+.buttons .buttonTotal{
+  grid-column: 1 / span 2;
+}
+.buttonCalc,
+.buttonReset, .buttonTotal {
+  margin: 0.5rem;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: rgb(228, 242, 255);
+}
+
+
+/* removes arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#btn:hover {
+  cursor: pointer;
+  background-color: rgb(255, 233, 220);
+  color: #333;
+}
+
+/* modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: #fff;
+  text-align: center;
+  margin: 10% auto;
+  width: 350px;
+  border-radius: 10px;
+  padding: 3rem;
+  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2), 0 7px 20px rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+.modal-content h1 {
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.test{
+  margin-top: .7rem;
+}
+.test i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* selects all new list items and styles them */
+[id^=newListItem]{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  width: 11rem;
+  margin: .5rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+/* move 'x' and change color on hover */
+span.close{
+position: relative;
+left: 4rem;
+}
+
+span.close:hover{
+  cursor: pointer;
+  color: #fff;
+}
+
+
+/* change font awesome colors */
+.fa-thumbs-down{
+  color: red;
+}
+
+.fa-grimace{
+  color: rgb(253, 166, 52);
+}
+
+.fa-smile{
+  color: rgb(255, 253, 136);
+}
+
+.fa-smile-beam{
+  color: rgb(106, 196, 255);
+}
+
+.fa-laugh-beam{
+  color: rgb(228, 170, 255);
+}
+
+ .fa-grin-stars{
+  
+  color:rgba(0, 255, 0, 0.767);
+
+}
+
+@media only screen and (max-device-width: 667px) {
+  .container{
+    margin: auto;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .text-win{
+    font-size: 1.5rem;
+  }
+}
