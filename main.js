@@ -22,27 +22,27 @@ function grades() {
     if (total >= 100){
     test.innerHTML = `
     <h1 class="text-win">You scored ${total}%!</h1>
-    <i class="fas fa-grin-stars fa-5x"></i>`
+    <i class="fas fa-grin-stars fa-5x" id="chewy"></i>`
   }else if(total >= 90 && total <= 99) {
     test.innerHTML = `
     <h1 class="text-win">You scored ${total}% for an A!</h1>
-    <i class="far fa-laugh-beam fa-5x"></i>`;
+    <i class="far fa-laugh-beam fa-5x" id="chewy"></i>`;
   } else if (total >= 80 && total <= 89) {
     test.innerHTML = `
     <h1 class="text-win">You scored ${total}% For a B</h1>
-    <i class="far fa-smile-beam fa-5x"></i>`;
+    <i class="far fa-smile-beam fa-5x" id="chewy"></i>`;
   } else if (total >= 70 && total <= 79) {
     test.innerHTML = `
     <h1 class="text-win">You scored ${total}% for a C</h1>
-    <i class="far fa-smile fa-5x"></i>`;
+    <i class="far fa-smile fa-5x" id="chewy"></i>`;
   } else if (total >= 60 && total <= 69) {
     test.innerHTML = `
     <h1 class="text-win">You scored ${total}% for a D</h1>
-    <i class="far fa-grimace fa-5x"></i>`;
+    <i class="far fa-grimace fa-5x" id="chewy"></i>`;
   } else {
     test.innerHTML = `
     <h1 class="text-win">You scored a ${total}% and failed</h1>
-    <i class="fas fa-thumbs-down fa-5x"></i>`;
+    <i class="fas fa-thumbs-down fa-5x" id="chewy"></i>`;
   }
   scores.push(total);
   // getAverage();
@@ -67,16 +67,16 @@ function getAverage() {
     result.innerHTML = `<h1 class="test"> Wow! Your average is ${avg}%!</h1>
     <i class="fas fa-grin-stars fa-5x"></i>`;
   }else if(avg >= 90 && avg <= 99) {
-    result.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
+    result.innerHTML = `<h1 class="test"> Your average is ${avg}% for an A!</h1>
     <i class="far fa-laugh-beam fa-5x"></i>`;
   } else if (avg >= 80 && avg <= 89) {
-    result.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
+    result.innerHTML = `<h1 class="test"> Your average is ${avg}% for a B</h1>
     <i class="far fa-smile-beam fa-5x"></i>`;
   } else if (avg >= 70 && avg <= 79) {
-    result.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
+    result.innerHTML = `<h1 class="test"> Your average is ${avg}% for a C</h1>
     <i class="far fa-smile fa-5x"></i>`;
   } else if (avg >= 60 && avg <= 69) {
-    result.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
+    result.innerHTML = `<h1 class="test"> Your average is ${avg}% for a D</h1>
     <i class="far fa-grimace fa-5x"></i>`;
   } else {
     result.innerHTML = `<h1 class="test"> Your average is ${avg}%</h1>
@@ -167,9 +167,14 @@ function addItem() {
     let testt = parseInt(this.id.split('-')[1]);
     this.parentNode.removeChild(this);
     scores.splice(testt,1);
+    document.querySelector('.text-win').innerHTML = `<h1 class="text-win">You scored ${scores.slice(-1)[0]}%</h1>`;
+
+    document.getElementById('chewy').style.display = 'none';
+
     if(scores.length === 0){
       document.querySelector('.test').innerHTML = '';
       document.querySelector('.scoresH1').innerHTML = '';
+      
     }
 
     i = 0;

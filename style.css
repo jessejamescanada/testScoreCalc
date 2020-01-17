@@ -136,6 +136,11 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .test{
   margin-top: .7rem;
+  font-size: 1.5rem;
+}
+
+.test h1{
+  font-size: 1.5rem;
 }
 .test i {
   display: flex;
