@@ -93,6 +93,8 @@ function clearInput() {
   document.querySelector("#list-container").style.display = "none";
   document.querySelector('#result').innerHTML = '';
 
+  document.querySelector('.scoresH1').innerHTML = ''
+
   // below resets list values
   // scores.length = 0;
   // for(j=0; j <= scores.length-1; j++){
@@ -117,6 +119,7 @@ function success() {
     document.querySelector(".buttonCalc").disabled = false;
     grades();
     addItem();
+    document.querySelector('.scoresH1').innerHTML = `Scores`
   }
 }
 
@@ -166,6 +169,7 @@ function addItem() {
     scores.splice(testt,1);
     if(scores.length === 0){
       document.querySelector('.test').innerHTML = '';
+      document.querySelector('.scoresH1').innerHTML = '';
     }
 
     i = 0;

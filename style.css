@@ -214,3 +214,13 @@ span.close:hover{
     font-size: 1.5rem;
   }
 }
+
+.scoresH1{
+  color: lightblue;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
