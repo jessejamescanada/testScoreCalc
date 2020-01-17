@@ -6,9 +6,9 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-image: linear-gradient(to bottom, #fafafa, #f3f3f3);
 }
 
@@ -152,17 +152,25 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-column-gap: 10px;
   width: 11rem;
   margin: .5rem;
+  font-size: 1.2rem;
+}
+
+[id^=newListItem]:hover{
+  cursor: pointer;
+  color: #fff;
 }
 
 /* move 'x' and change color on hover */
 span.close{
 position: relative;
 left: 4rem;
+font-size: 1.4rem;
 }
 
 span.close:hover{
   cursor: pointer;
   color: #fff;
+  
 }
 
 

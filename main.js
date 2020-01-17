@@ -19,7 +19,7 @@ function grades() {
   let s = totalScore.value;
 
   let total = ((g / s) * 100).toFixed(2);
-    if (total == 100){
+    if (total >= 100){
     test.innerHTML = `
     <h1 class="text-win">You scored ${total}%!</h1>
     <i class="fas fa-grin-stars fa-5x"></i>`
@@ -164,6 +164,9 @@ function addItem() {
     let testt = parseInt(this.id.split('-')[1]);
     this.parentNode.removeChild(this);
     scores.splice(testt,1);
+    if(scores.length === 0){
+      document.querySelector('.test').innerHTML = '';
+    }
 
     i = 0;
     for (i = 0; i < scores.length; i++) {
